@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickynote</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Local board for Daniel</p>
+        <h1>Stickynote</h1>
+        <p class="subtitle">Pastel notes you can slap onto a fridge-like board, rearrange, and keep around locally.</p>
+      </div>
+
+      <div class="toolbar" aria-label="Board controls">
+        <button id="new-note-button" class="primary-button" type="button">New Note</button>
+        <button id="save-json-button" type="button">Save JSON</button>
+        <button id="load-json-button" type="button">Load JSON</button>
+        <button id="bind-file-button" type="button">Bind Save File</button>
+        <button id="sync-file-button" type="button">Sync Now</button>
+        <button id="clear-board-button" type="button">Clear Board</button>
+      </div>
+    </header>
+
+    <section class="status-row" aria-live="polite">
+      <div>
+        <strong>Status:</strong>
+        <span id="status-text">Board waking up...</span>
+      </div>
+      <div>
+        <strong>Tip:</strong>
+        <span>Press <kbd>Enter</kbd> to save a note. Use the folded tab to drag it around.</span>
+      </div>
+    </section>
+
+    <main>
+      <section id="board" class="board" aria-label="Sticky note board"></section>
+    </main>
+  </div>
+
+  <template id="note-template">
+    <article class="note" tabindex="0">
+      <div class="note-glow"></div>
+      <div class="note-actions">
+        <button class="layer-button" data-action="back" type="button">Back</button>
+        <button class="layer-button" data-action="front" type="button">Front</button>
+        <button class="layer-button danger-button" data-action="delete" type="button">Delete</button>
+      </div>
+      <div class="note-face">
+        <div class="note-display"></div>
+        <textarea class="note-editor" rows="7" maxlength="280" spellcheck="true"></textarea>
+      </div>
+      <button class="drag-tab" type="button" aria-label="Drag note"></button>
+    </article>
+  </template>
+
+  <input id="load-file-input" type="file" accept=".json,application/json" hidden>
+
+  <script src="app.js"></script>
+</body>
+</html>

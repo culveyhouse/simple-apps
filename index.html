@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Apps</title>
+    <meta name="color-scheme" content="dark">
+    <style>
+      :root {
+        --bg: #0f1115;
+        --panel: #171b22;
+        --panel-border: #262c38;
+        --text: #f3f6fb;
+        --muted: #9aa4b2;
+        --link: #8ab4ff;
+        --link-hover: #b6ceff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background:
+          radial-gradient(circle at top, #1d2430 0%, #0f1115 45%),
+          var(--bg);
+        color: var(--text);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      main {
+        width: min(100%, 680px);
+        padding: 32px;
+        border: 1px solid var(--panel-border);
+        border-radius: 20px;
+        background: rgba(23, 27, 34, 0.92);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.05;
+      }
+
+      p {
+        margin: 0 0 24px;
+        color: var(--muted);
+      }
+
+      nav {
+        display: grid;
+        gap: 12px;
+      }
+
+      a {
+        display: block;
+        padding: 16px 18px;
+        border: 1px solid var(--panel-border);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--link);
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-color: #46608c;
+        background: rgba(138, 180, 255, 0.08);
+        color: var(--link-hover);
+        transform: translateY(-1px);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Simple Apps</h1>
+      <p>Starter homepage for the GitHub Pages site.</p>
+      <nav aria-label="App links">
+        <a href="stickynote/">Stickynote</a>
+        <a href="#app-2">2</a>
+        <a href="#app-3">3</a>
+        <a href="#app-4">4</a>
+      </nav>
+    </main>
+  </body>
+</html>
